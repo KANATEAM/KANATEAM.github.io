@@ -1,11 +1,138 @@
 body {
     background-color: #1f1e33;
-    color: rgb(250, 209, 44);
+    color: rgb(250, 209, 44);   
     font-family: "ヒラギノ丸ゴシック ProN", "遊ゴシック", "ヒラギノ角ゴ ProN", sans-serif;
     white-space:nowrap;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+.button{
+  background:gold;
+  padding:1em .5em;
+  border: 3px solid black;
+  text-align: center;
+  text-decoration:none;
+  color:black;
+  font-size:2.2em;
+  border-radius: 8%;
+  margin:1em;
+}
+
+.block{
+  display:block;
+  width:111;
+  margin:0 auto;
+}
+
+h2 {
+  position: relative;
+  padding: 1rem .5rem;
+}
+
+h2:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  content: '';
+  border-radius: 3px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#6b6740), to(#edd30b));
+  background-image: -webkit-linear-gradient(right, #6b6740 0%, #edd30b 100%);
+  background-image: linear-gradient(to left, #6b6740 0%, #edd30b 100%);
+}
+
+
+
+
+
+.menu-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  height: 10%;
+  width: 5%;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  background-color: #ffde25;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #1f1e33;
+  position: absolute;
+}
+.menu-btn:hover {
+transform: translateY(3px);
+background-color: #ffc525;
+}
+.menu-btn span:before {
+  bottom: 8px;
+}
+.menu-btn span:after {
+  top: 8px;
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+  background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.menu-content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  left: 100%;/*leftの値を変更してメニューを画面外へ*/
+  z-index: 80;
+  background-color: #1f1e33;
+  transition: all 0.5s;/*アニメーション設定*/
+}
+
+#menu-btn-check {
+display: none;
+}
+
+#menu-btn-check:checked ~ .menu-content {
+  left: 0;/*メニューを画面内へ*/
+}
+
+
+.btn-flat-simple {
+  position: relative;
+  width: 100%;
+  height: 12%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #1f1e33;
+  background: #f6ee63;
+  transition: .4s;
+  font-size: 20px;
+}
+
+.btn-flat-simple:hover {
+  background: #ffd813;
+  color: #1f1e33;
+  font-size: 25px;
 }

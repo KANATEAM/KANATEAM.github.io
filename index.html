@@ -14,6 +14,31 @@
 <body>
     <h1>KANATEAM ウェブサイト</h1>
 
+    <header>
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-btn-check">
+        <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        
+         <div class="menu-content">
+             <a class="btn-flat-simple" href="./index.html"> <i class="fa-solid fa-play"> メインページ </i>  </a>
+             <a class="btn-flat-simple" href="./server/index.html"> <i class="fa-brands fa-discord"> Discordサーバー </i>  </a>
+             <a class="btn-flat-simple" href="./club/index.html"> <i class="fa-solid fa-star"> クラブ説明 </i>  </a>
+             <a class="btn-flat-simple" href="./link/index.html"> <i class="fa-solid fa-paperclip"> 外部リンク </i>  </a>
+         <div id="content-table"></div>
+         </div>
+         
+         <script>
+           // ボタンを押したら目次画面を閉じるように。
+           $(function() {
+             $('.menu-content').on('click', function(event) {
+               $('#menu-btn-check').prop('checked', false);
+             });
+           });
+         </script>
+         
+      </div>
+    </header>
+
     <br>
     
     <h2> <i class="fa-solid fa-play"></i> ページ移動 </h2>
